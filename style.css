@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f5f7fa;
+    padding: 10px;
+}
+
+/* Main Container */
+.main-wrapper {
+    width: 500px;
+    margin: auto;
+}
+
+/* Popup Window */
+.details-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ddd;
+}
+
+/* Header Styling */
+.text-white {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Sections Styling */
+.mb-4 {
+    margin-bottom: 20px !important;
+}
+
+.border-bottom {
+    border-bottom: 2px solid #ddd !important;
+}
+
+/* Words & Idioms Sections */
+.words-container, .idiom-container {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 10px;
+    border-left: 4px solid #007bff;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.idiom-container {
+    border-left: 4px solid #dc3545;
+}
+
+/* Sound Icon */
+#soundIcon {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+/* Text Styling */
+h1, h4, h6 {
+    font-weight: 600;
+    color: rgb(92, 12, 80);
+    margin-bottom: 6px;
+    text-align: left;
+}
+
+p {
+    font-size: 14px;
+    color: #333;
+    text-align: justify; /* Ensures clean alignment */
+    word-wrap: break-word;
+    margin-bottom: 6px;
+    padding-left: 15px; /* Indent content for better alignment */
+}
+
+/* Make sure content doesn't overflow left */
+.words-container p, .idiom-container p {
+    padding-left: 20px; /* Proper indent */
+    text-align: justify;
+}
+
+/* Ensure headings align properly */
+h4, h6 {
+    margin-bottom: 4px;
+    text-align: left;
+    display: block; /* Prevents text from overlapping */
+    width: 100%;
+}
+
+/* Colors */
+.text-secondary {
+    font-weight: bold;
+    color: #6c757d !important;
+}
+
+.text-primary {
+    color: #007bff !important;
+}
+
+.text-success {
+    color: #28a745 !important;
+}
+
+.text-danger {
+    color: #dc3545 !important;
+}
+.p-0.m-0 {
+    font-size: 18px; /* Adjust as needed */
+}

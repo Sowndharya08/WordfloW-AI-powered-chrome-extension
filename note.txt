@@ -1,0 +1,91 @@
+Hey Gemini,
+
+I have a word,sentence or paragraph that i would like you to analyse,
+
+Input:${Query}
+
+please provide the Analysis in JSON format with the following structure
+
+1.Meaning:
+     Provide a clear and concise interpretation of the entire input (whether it is a word, sentence, or paragraph).
+
+2.Usage Context:
+      Describe where and how the input phrase is commonly used (e.g., education, professional communication, casual conversation).
+
+3.Words (Breakdown of Individual Words in Input):
+     For each word in the input, return the following details:
+
+-Word: The specific word extracted.
+-Meaning: The dictionary definition of the word.
+-Synonyms: A list of similar words.
+-Antonyms: A list of opposite words.
+-Example: A sample sentence using the word.
+-Where to Use: Explanation of how and where this word is most commonly used in real-world scenarios.
+-Idioms (If Present in the Input):
+
+4.Identify idioms within the input.
+     For each idiom found, return:
+-Phrase: The idiom detected in the input.
+-Valid: Boolean (true or false) indicating whether the phrase is a recognized idiom.
+-Meaning: The definition of the idiom.
+-Example: A sample sentence using the idiom.
+-Where to Use: Explanation of when and where this idiom is appropriate.
+-Related Phrases: Other similar idioms or expressions.
+
+
+5.Recommendations (For Additional Learning):
+
+Suggest extra resources or areas of study related to the input.
+Examples include:
+-Motivational quotes.
+-Relevant books/articles.
+-Psychological studies on language learning.
+
+
+###expected JSON Output:
+
+{
+  "input": "Encourage users to practice regularly to improve their skills.",
+  "meaning": "This sentence suggests motivating individuals to practice consistently in order to enhance their abilities.",
+  "usage_context": "This phrase is commonly used in educational settings, coaching, and self-improvement discussions to emphasize the importance of regular practice.",
+  "words": [
+    {
+      "word": "Encourage",
+      "meaning": "To give someone support, confidence, or hope.",
+      "synonyms": ["Motivate", "Inspire", "Urge"],
+      "antonyms": ["Discourage", "Deter", "Hinder"],
+      "example": "Teachers should encourage students to ask questions.",
+      "sentence": "Parents should encourage their children to be independent.",
+      "where_to_use": "Can be used in personal development, leadership, and motivational speaking contexts."
+    },
+    {
+      "word": "Practice",
+      "meaning": "The act of repeatedly performing an activity to improve skill.",
+      "synonyms": ["Rehearsal", "Training", "Exercise"],
+      "antonyms": ["Neglect", "Abandon", "Ignore"],
+      "example": "Daily practice is essential for mastering a musical instrument.",
+      "sentence": "She made it a habit to practice piano for two hours every day.",
+      "where_to_use": "Useful in skill development, education, and professional training discussions."
+    }
+  ],
+  "idioms": [
+    {
+      "phrase": "Practice makes perfect",
+      "valid": true,
+      "meaning": "Regular exercise of an activity leads to improvement.",
+      "example": "He plays the guitar every day because he believes that practice makes perfect.",
+      "where_to_use": "Commonly used in learning environments, coaching, and motivational speaking.",
+      "related_phrases": ["Repetition is the key to success", "Hard work pays off"]
+    }
+  ],
+  "recommendations": [
+    {
+      "type": "Additional Learning",
+      "suggestions": [
+        "Explore more motivational quotes related to learning.",
+        "Look up famous speeches on the importance of practice.",
+        "Read about psychological studies on habit formation."
+      ]
+    }
+  ]
+}
