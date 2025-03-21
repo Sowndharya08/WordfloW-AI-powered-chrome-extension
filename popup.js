@@ -92,7 +92,7 @@ const generatePrompt = (query) => {
             detailsContainer.innerHTML = "<h6>No Information Available.</h6>";
             return;
         }
-        const API_KEY = "AIzaSyDat2b5lvyV00meXWy8sNIqH7ZxOFbhZ7s";
+        const API_KEY = "your_api_key";
         const API_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
         const prompt = generatePrompt(selectedText);
   
