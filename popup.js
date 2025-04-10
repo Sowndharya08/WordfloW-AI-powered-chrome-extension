@@ -1,5 +1,5 @@
 const generatePrompt = (query) => {
-    return `
+    return ` 
   Hi,Gemini! 
   I have a word, sentence, or paragraph that I would like you to analyze.
   
@@ -46,7 +46,7 @@ const generatePrompt = (query) => {
                 </div><br>`;
   
     // Adding words section
-    html += `<h3 class="text-success">Words:</h3>`;
+    html +=` <h3 class="text-success">Words:</h3>`;
     if (result.words && result.words.length > 0) {
         result.words.forEach((word) => {
             html += `<div class="mb-3">
@@ -69,10 +69,11 @@ const generatePrompt = (query) => {
                         <h6 class="m-0 p-0 text-capitalize">${idiom.phrase}</h6>
                         <p class="p-0 m-0">${idiom.meaning}</p>
                         <p class="p-0 m-0"><b class="text-primary">Example: </b></h3> ${idiom.example}</p>
-                    </div>`;
+                    </div>
+                    `;
         });
     } else {
-        html += `<p>No idioms found.</p>`;
+        html +=`<p>No idioms found.</p>`;
     }
   
     return html;
@@ -92,7 +93,7 @@ const generatePrompt = (query) => {
             detailsContainer.innerHTML = "<h6>No Information Available.</h6>";
             return;
         }
-        const API_KEY = "your_api_key";
+        const API_KEY = "AIzaSyDat2b5lvyV00meXWy8sNIqH7ZxOFbhZ7s";
         const API_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
         const prompt = generatePrompt(selectedText);
   
@@ -131,56 +132,55 @@ const generatePrompt = (query) => {
             document.querySelector(".details-container").innerHTML = "<h6>Error fetching data. Please try again.</h6>";
         }
     });
-       // View history button
-    const viewHistoryBtn = document.createElement("button");
-    viewHistoryBtn.textContent = "View My History";
-    viewHistoryBtn.className = "btn btn-primary";
-    viewHistoryBtn.style.marginTop = "10px";
-    detailsContainer.appendChild(viewHistoryBtn);
+    //    // View history button
+    // const viewHistoryBtn = document.createElement("button");
+    // viewHistoryBtn.textContent = "View My History";
+    // viewHistoryBtn.className = "btn btn-primary";
+    // viewHistoryBtn.style.marginTop = "10px";
+    // detailsContainer.appendChild(viewHistoryBtn);
 
-    viewHistoryBtn.addEventListener("click", () => {
-        chrome.storage.local.get({ history: [] }, ({ history }) => {
-            historyContainer.innerHTML = "";
+    // viewHistoryBtn.addEventListener("click", () => {
+    //     chrome.storage.local.get({ history: [] }, ({ history }) => {
+    //         historyContainer.innerHTML = "";
 
-            if (history.length === 0) {
-                historyContainer.innerHTML = "<p>No history found.</p>";
-                return;
-            }
+    //         if (history.length === 0) {
+    //             historyContainer.innerHTML = "<p>No history found.</p>";
+    //             return;
+    //         }
 
-            history.forEach((item, index) => {
-                const historyItem = document.createElement("div");
-                historyItem.className = "history-item";
-                historyItem.style.display = "flex";
-                historyItem.style.justifyContent = "space-between";
-                historyItem.style.alignItems = "center";
-                historyItem.style.margin = "5px 0";
-                historyItem.style.padding = "5px";
-                historyItem.style.border = "1px solid #ddd";
-                historyItem.style.borderRadius = "5px";
-                historyItem.style.background = "#f9f9f9";
+    //         history.forEach((item, index) => {
+    //             const historyItem = document.createElement("div");
+    //             historyItem.className = "history-item";
+    //             historyItem.style.display = "flex";
+    //             historyItem.style.justifyContent = "space-between";
+    //             historyItem.style.alignItems = "center";
+    //             historyItem.style.margin = "5px 0";
+    //             historyItem.style.padding = "5px";
+    //             historyItem.style.border = "1px solid #ddd";
+    //             historyItem.style.borderRadius = "5px";
+    //             historyItem.style.background = "#f9f9f9";
 
-                const historyText = document.createElement("span");
-                historyText.textContent = item;
-                historyText.style.flexGrow = "1";
+    //             const historyText = document.createElement("span");
+    //             historyText.textContent = item;
+    //             historyText.style.flexGrow = "1";
 
-                const deleteBtn = document.createElement("button");
-                deleteBtn.textContent = "❌";
-                deleteBtn.style.border = "none";
-                deleteBtn.style.background = "transparent";
-                deleteBtn.style.cursor = "pointer";
+    //             const deleteBtn = document.createElement("button");
+    //             deleteBtn.textContent = "❌";
+    //             deleteBtn.style.border = "none";
+    //             deleteBtn.style.background = "transparent";
+    //             deleteBtn.style.cursor = "pointer";
 
-                deleteBtn.addEventListener("click", () => {
-                    history.splice(index, 1);
-                    chrome.storage.local.set({ history }, () => {
-                        viewHistoryBtn.click(); // Refresh history list
-                    });
-                });
+    //             deleteBtn.addEventListener("click", () => {
+    //                 history.splice(index, 1);
+    //                 chrome.storage.local.set({ history }, () => {
+    //                     viewHistoryBtn.click(); // Refresh history list
+    //                 });
+    //             });
 
-                historyItem.appendChild(historyText);
-                historyItem.appendChild(deleteBtn);
-                historyContainer.appendChild(historyItem);
+    //             historyItem.appendChild(historyText);
+    //             historyItem.appendChild(deleteBtn);
+    //             historyContainer.appendChild(historyItem);
             });
-        });
-    });
-});
-  
+//         });
+//     });
+// });
